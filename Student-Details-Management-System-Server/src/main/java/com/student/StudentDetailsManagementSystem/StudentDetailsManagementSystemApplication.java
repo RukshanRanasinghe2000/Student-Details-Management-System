@@ -1,4 +1,4 @@
-package com.student.Student.Details.Management.System;
+package com.student.StudentDetailsManagementSystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
