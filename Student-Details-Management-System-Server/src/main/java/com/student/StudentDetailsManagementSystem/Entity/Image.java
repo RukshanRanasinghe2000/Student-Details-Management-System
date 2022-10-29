@@ -18,10 +18,10 @@ import javax.persistence.Table;
 public class Image {
 
     @Id
-//    @Column(name = 'id')
+    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "image", unique = false, nullable = false, length = 100000)
+    @Column(name = "image")
     private byte[] image;
 
 

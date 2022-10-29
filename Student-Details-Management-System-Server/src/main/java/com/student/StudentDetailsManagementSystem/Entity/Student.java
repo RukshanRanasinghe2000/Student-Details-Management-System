@@ -5,10 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -32,8 +29,9 @@ public class Student {
     private String mobile;
     @Column
     private String email;
-    @Column
-    private String image_id;
+    @JoinColumn(name = "photo_id", referencedColumnName = "id")
+    @OneToOne
+    private Image image;
     @Column
     private String gender_id;
 
