@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/StudentDetailsManagementSystem/server")
+@RequestMapping("/StudentDetailsManagementSystem/server/")
 public class ImageController {
     @Autowired
     private ImageService imageServiceService;
 
     @GetMapping("images")
     public List<Image> get(){return imageServiceService.getAll();}
+//    @GetMapping("images/id/{imageid}")
 }
