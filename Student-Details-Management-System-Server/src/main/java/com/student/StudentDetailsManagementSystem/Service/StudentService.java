@@ -25,4 +25,19 @@ public class StudentService {
         return student;
     }
 
+    public List <Student> getByIndex(String studentIndex){
+        List<Student> student = studentDao.getByIndex(studentIndex);
+        return student;
+    }
+
+    public List<Student> getByName(String studentName){
+        List <Student> studentList = studentDao.getByName(studentName);
+        return studentList;
+    }
+
+    public  List <Student> getByGender(String studentGender){
+        List <Student> student = studentDao.getByGender(studentGender);
+        return student;
+    }
+
 }

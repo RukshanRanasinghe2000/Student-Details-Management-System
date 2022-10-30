@@ -19,7 +19,17 @@ public class StudentController {
     @GetMapping("students")
     public List<Student> get(){return studentService.getAll();}
 
-    @GetMapping("student/id/{studentId}")
+    @GetMapping("students/id/{studentId}")
     public Student getById(@PathVariable String studentId){return studentService.getById(studentId);}
+
+    @GetMapping("students/index/{studentIndex}")
+    public  List<Student> getByIndex(@PathVariable String studentIndex){return studentService.getByIndex(studentIndex);}
+
+    @GetMapping("students/name/{studentName}")
+    public List<Student> getByName(@PathVariable String studentName){return  studentService.getByName(studentName);}
+
+    @GetMapping("students/gender/{studentGender}")
+    public  List <Student> getByGender(@PathVariable String studentGender){return studentService.getByGender(studentGender);}
 }
 
+//http://127.0.0.1:8080/StudentDetailsManagementSystem/server/student/index/s0001

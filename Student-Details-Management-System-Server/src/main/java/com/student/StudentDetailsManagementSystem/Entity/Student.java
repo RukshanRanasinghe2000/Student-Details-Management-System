@@ -19,21 +19,26 @@ public class Student {
     @Id
     @Column
     private Integer id;
-    @Column
+    @Column(name = "index_no")
+    private String index;
+    @Column(name = "name")
     private String name;
-    @Column
+    @Column(name = "dob")
     private String dob;
-    @Column
+    @Column(name = "address")
     private String address;
-    @Column
+    @Column(name = "mobile")
     private String mobile;
-    @Column
+    @Column(name = "email")
     private String email;
+
     @JoinColumn(name = "photo_id", referencedColumnName = "id")
     @OneToOne
     private Image image;
-    @Column
-    private String gender_id;
+
+    @JoinColumn(name = "gender_id", referencedColumnName = "id")
+    @ManyToOne
+    private Gender gender;
 
 
 }
