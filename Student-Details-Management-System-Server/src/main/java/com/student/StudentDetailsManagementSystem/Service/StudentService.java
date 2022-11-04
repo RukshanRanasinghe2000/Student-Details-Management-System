@@ -40,4 +40,10 @@ public class StudentService {
         return student;
     }
 
+    public List<Student> getByNameIndexGender(String studentName, String index_no,  String studentGender) {
+        List<Student> student = studentDao.getByNameIndexGender(studentName, index_no, studentGender);
+        System.out.println(studentName+ index_no+ studentGender);
+        return student;
+    }
+
 }

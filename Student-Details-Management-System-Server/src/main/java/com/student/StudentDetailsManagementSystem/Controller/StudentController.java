@@ -30,6 +30,13 @@ public class StudentController {
 
     @GetMapping("students/gender/{studentGender}")
     public  List <Student> getByGender(@PathVariable String studentGender){return studentService.getByGender(studentGender);}
+
+    @GetMapping("students/getAll/{studentName}/{studentIndex}/{studentGender}")
+    public  List <Student> getByNameIndexGender(@PathVariable String studentName,@PathVariable String studentIndex,@PathVariable String studentGender){
+//        System.out.println(studentName+studentIndex+studentGender);
+        return studentService.getByNameIndexGender(studentName,studentIndex,studentGender);
+    }
 }
+
 
 //http://127.0.0.1:8080/StudentDetailsManagementSystem/server/student/index/s0001
