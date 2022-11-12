@@ -46,4 +46,8 @@ public class StudentService {
         return student;
     }
 
+
+    public void save(Student student) {
+        studentDao.save(student);
+    }
 }

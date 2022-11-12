@@ -7,6 +7,7 @@ import com.student.StudentDetailsManagementSystem.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -33,10 +34,15 @@ public class StudentController {
 
     @GetMapping("students/getAll/{studentName}/{studentIndex}/{studentGender}")
     public  List <Student> getByNameIndexGender(@PathVariable String studentName,@PathVariable String studentIndex,@PathVariable String studentGender){
-//        System.out.println(studentName+studentIndex+studentGender);
         return studentService.getByNameIndexGender(studentName,studentIndex,studentGender);
     }
+
+    @PostMapping("students")
+    public  void  save(@Valid @RequestBody Student student ){
+        studentService.save(student);
+
+
+    }
+
 }
 
-
-//http://127.0.0.1:8080/StudentDetailsManagementSystem/server/student/index/s0001

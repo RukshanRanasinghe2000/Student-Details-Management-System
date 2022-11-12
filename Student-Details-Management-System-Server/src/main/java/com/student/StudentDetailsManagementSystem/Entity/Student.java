@@ -1,11 +1,8 @@
 package com.student.StudentDetailsManagementSystem.Entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-
+import lombok.*;
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,19 +14,25 @@ import javax.persistence.*;
 public class Student {
 
     @Id
-    @Column
+    @NonNull
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
     @Column(name = "index_no")
+    @Pattern(regexp = "^[s|S][0-9]{4}$")
     private String index;
     @Column(name = "name")
+    @Pattern(regexp = "^[a-zA-Zs]+$")
     private String name;
     @Column(name = "dob")
     private String dob;
     @Column(name = "address")
     private String address;
     @Column(name = "mobile")
+    @Pattern(regexp = "^[0][7][0-9][0-9]{7}$")
     private String mobile;
     @Column(name = "email")
+    @Pattern(regexp = "^[a-z0-9]+[@][a-z]+.[a-z]+$")
     private String email;
 
     @JoinColumn(name = "photo_id", referencedColumnName = "id")
