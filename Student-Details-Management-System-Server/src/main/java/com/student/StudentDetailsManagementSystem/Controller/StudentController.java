@@ -39,6 +39,14 @@ public class StudentController {
 
     @PostMapping("students")
     public  void  save(@Valid @RequestBody Student student ){
+//        Student stu = new Student();
+//        stu.setName(student.getName());
+//        stu.setIndex(student.getIndex());
+//        stu.setDob(student.getDob());
+//        stu.setEmail(student.getEmail());
+//        stu.setMobile(student.getMobile());
+//        stu.setAddress(student.getAddress());
+//        stu.setGender(student.getGender());
         studentService.save(student);
 
 
